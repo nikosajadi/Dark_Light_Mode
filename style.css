@@ -23,6 +23,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -75,7 +76,7 @@ a:focus {
   border-bottom: 3px solid;
 }
 
-/* Home Section */
+/* Home Section */   
 .title-group {
   text-align: center;
 }
