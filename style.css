@@ -87,7 +87,7 @@ a:focus {
 
 /* About Section */
 .about-container {
-  display: flex;
+  display : flex;
 }
 
 .image-container {
