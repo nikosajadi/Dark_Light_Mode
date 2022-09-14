@@ -1,6 +1,21 @@
 
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const nav = document.getElementById('nav');
+const toggleIcon = document.getElementById('toggle-icon');
+const image1 = document.getElementById('image1');
+const image2 = document.getElementById('image2');
+const image3 = document.getElementById('image3');
+const textBox   = document.getElementById('text-box');
+//Dark Mode style
+function darkMode() {
+    nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+    textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
+    // console.log(toggleIcon.children);
+    toggleIcon.children[0].texContent = 'Dark Mode';
+    toggleIcon.children[1].classList.remove('fa-sun');
+    toggleIcon.children[1].classList.add('fa-moon');
 
+}
 
 //switch Theme Dynamically
 function switchTheme(event) {
@@ -8,9 +23,11 @@ function switchTheme(event) {
     // if it is true
     if (event.target.checked){
         document.documentElement.setAttribute('data-theme','dark');
+        darkMode()
     // if it is not checked,meaning if our checkbox cheched equals false
     } else {
-        documentElement.documentElement.setAttribute('data-theme','light');
+        document.documentElement.setAttribute('data-theme','light');
+        lightMode();
     }
 }
 
