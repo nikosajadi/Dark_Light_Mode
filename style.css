@@ -239,7 +239,7 @@ p {
   transition: 0.4s;
   width: 26px;
 }
-
+/* We are chenging the color to become the primary color when it is cheacked. */
 input:checked + .slider {
   background: var(--primary-color);
 }
@@ -255,7 +255,7 @@ input:checked + .slider::before {
 .slider.round::before {
   border-radius: 50%;
 }
-
+/* fas = font awsemo solid */
 .fas {
   font-size: 30px;
   margin-right: 5px;
