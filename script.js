@@ -41,11 +41,13 @@ function lightMode() {
 function switchTheme(event) {
     if (event.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
+      //  localStorage : save our them with in our browser session
       localStorage.setItem('theme', 'dark');
       darkMode();
     // if it is not checked,meaning if our checkbox cheched equals false
     } else {
        document.documentElement.setAttribute('data-theme', 'light');
+       //  localStorage :We can chek in Application/inspect
        localStorage.setItem('theme', 'light');
        lightMode();
   }
@@ -53,5 +55,19 @@ function switchTheme(event) {
 
 
 
-//event listener = here we need to change event instead of cli
+//Event listener = here we need to change event instead of cli
 toggleSwitch.addEventListener("change", switchTheme); 
+
+//Check Local Storage for the theme
+const currentTheme = localStorage.getItem('theme');
+//console.log(currentTheme);
+//I going to retrieve the current theme   or Value and keep our defult theme In the browser session
+if (currentTheme){
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  // keep our defult theme with deatail
+  if (currentTheme === 'dark'){
+    toggleSwitch.checked = true;
+    darkMode()
+  }
+
+}
