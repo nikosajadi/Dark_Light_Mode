@@ -14,28 +14,16 @@ function imageMode(color) {
   image3.src = `img/undraw_conceptual_idea_${color}.svg`;
 }
 
-
-// Dark Mode Styles
-function darkMode() {
-    nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-    textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-    //console.log(toggleIcon.children)
-    //for changing the text value of 
-    toggleIcon.children[0].textContent = 'Dark Mode';
-    toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
-    imageMode('dark');
-  }  
-
-// Light Mode Styles
-function lightMode() {
-    nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-    textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-    toggleIcon.children[0].textContent = 'Light Mode';
-    toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-    imageMode('light');
-  }
-
-
+//I going to optimize this code and a void of reapad code here // Dark Mode Styles || // Light Mode Styles
+//Switch Them Dynamically
+function toggleDarkLightMode(isDark) {
+  nav.style.backgroundColor = isDark ? 'rgb(0 0 0 /50%)' : 'rgb(255 255 255 /50%)';
+  textBox.style.backgroundColor =  isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 /50%)';
+  toggleIcon.children[0].textContent =  isDark ? 'Dark Mode' : 'Light Mode';
+  isDark? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon'):
+  toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
+  isDark? imageMode('dark'): imageMode('light');
+}
 
 // Switch Theme Dynamically
 function switchTheme(event) {
