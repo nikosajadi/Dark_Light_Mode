@@ -31,13 +31,14 @@ function switchTheme(event) {
       document.documentElement.setAttribute('data-theme', 'dark');
       //  localStorage : save our them with in our browser session
       localStorage.setItem('theme', 'dark');
-      darkMode();
+      toggleDarkLightMode(true);
+      
     // if it is not checked,meaning if our checkbox cheched equals false
     } else {
        document.documentElement.setAttribute('data-theme', 'light');
        //  localStorage :We can chek in Application/inspect
        localStorage.setItem('theme', 'light');
-       lightMode();
+      toggleDarkLightMode(false);
   }
 }
 
@@ -55,7 +56,7 @@ if (currentTheme){
   // keep our defult theme with deatail
   if (currentTheme === 'dark'){
     toggleSwitch.checked = true;
-    darkMode()
+    toggleDarkLightMode(true)
   }
 
 }
